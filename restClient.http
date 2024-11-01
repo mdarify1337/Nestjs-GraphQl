@@ -1,0 +1,45 @@
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "query { users { id name email } }"
+}
+
+
+####
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "query { user(id: 1) { id name email } }"
+}
+
+
+###
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { createUser(createUserInput: { name: \"John Doe\", email: \"john@example.com\" }) { id name email } }"
+}
+
+
+
+#### 
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { updateUser(id: 1, updateUserInput: { name: \"Jane Doe\", email: \"jane@example.com\" }) { id name email } }"
+}
+
+
+####
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { deleteUser(id: 1) }"
+}
